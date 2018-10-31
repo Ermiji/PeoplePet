@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="people :${peoples}">
+    <h1 th:text="${people.name}"></h1>
+    <h3 th:inline="text"><b>works as a [[${people.occupation}]]</b> and she says,
+        [[${people.description}]]</h3>
+    <ul>
+        <th:block th:each="pet : ${people.pets}">
+            <li th:inline="text"><b>[[${pet.genre}]]</b> life expectancy is
+                [[${pet.age}]].</li>
+        </th:block>
+    </ul>
+</div>
+</body>
+</html>
